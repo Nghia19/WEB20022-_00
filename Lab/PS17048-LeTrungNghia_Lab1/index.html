@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <body>
+    <header class="container text-center">
+      <img src="./img/logo.png" alt="Logo" />
+    </header>
+    <main>
+      <div class="container grid">
+        <aside class="menu sm-hide">
+          <nav>
+            <ul>
+              <li>
+                <a href="#menu"><i class="fas fa-bars"></i></a>
+              </li>
+              <li>
+                <a href="#home"><i class="fas fa-home"></i></a>
+              </li>
+              <li>
+                <a href="#search"><i class="fas fa-search"></i></a>
+              </li>
+              <li>
+                <a href="#volume"><i class="fas fa-volume-up"></i></a>
+              </li>
+              <li>
+                <a href="#user"><i class="fas fa-user"></i></a>
+              </li>
+              <li>
+                <a href="#spotify"><i class="fab fa-spotify"></i></a>
+              </li>
+              <li>
+                <a href="#setting"><i class="fas fa-cog"></i></a>
+              </li>
+              <li>
+                <a href="#soundcloud"><i class="fab fa-soundcloud"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div class="content">
+          <div class="playlist-detail">
+            <img src="./img/img.jpg" alt="" />
+            <div class="song-detail">
+              <ul>
+                <li>NHẠC 2020</li>
+                <li>Jack</li>
+                <li>2020, Hit Pop</li>
+              </ul>
+            </div>
+            <div class="action-song">
+              <button><i class="fas fa-play"></i> Phát tất cả</button>
+              <button><i class="fas fa-plus"></i> Thêm vào yêu thích</button>
+              <button><i class="fas fa-ellipsis-h"></i> Xem thêm</button>
+            </div>
+          </div>
+          <div class="song-list"></div>
+        </div>
+        <div class="music-player">
+          <div class="song-player">
+            <img src="./img/img.jpg" style="animation-play-state: paused" />
+            <div class="song-detail">
+              <div class="title">Tên bài hát</div>
+              <div class="singer">Ca sĩ</div>
+            </div>
+          </div>
+          <div class="controls">
+            <span class="current-time">0:00</span>
+            <div class="slider" data-direction="horizontal">
+              <div class="progress">
+                <div class="pin" id="progress-pin" data-method="rewind"></div>
+              </div>
+            </div>
+            <span class="total-time">0:00</span>
+          </div>
+          <div class="player-controls">
+            <button id="btnPrev"><i class="fas fa-step-backward"></i></button>
+            <button id="btnPlay" class="active">
+              <i class="fas fa-pause"></i>
+            </button>
+            <button id="btnNext"><i class="fas fa-step-forward"></i></button>
+            <button id="btnRestart"><i class="fas fa-redo"></i></button>
+            <button id="btnRandom"><i class="fas fa-random"></i></button>
+          </div>
+        </div>
+      </div>
+      <audio controls id="audio">
+        Your browser does not support the audio element.
+      </audio>
+    </main>
+    <footer class="container text-center">
+      <p>
+        Copyright © 2021 .All rights reserved by <span>WEB20022</span>. Designed
+        by <span>Nghia.lt</span>
+      </p>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
