@@ -61,6 +61,7 @@ h3 {
   margin: 5rem 0;
   color: white;
   background: url(../img/Chrysanthemum.jpg) no-repeat;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
