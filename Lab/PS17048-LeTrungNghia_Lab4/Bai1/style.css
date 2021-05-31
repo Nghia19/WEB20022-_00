@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+.container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  background: #999;
+  padding: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.left h1 {
+  margin: 20px 0px;
+  font-size: 30px;
+}
+.right {
+  float: right;
+  text-align: right;
+}
+.inhoa {
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+}
