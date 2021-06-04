@@ -1,0 +1,144 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6;
+  box-sizing: border-box;
+  background-attachment: fixed;
+}
+
+@media (max-width: 849px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0px auto;
+  padding: 0px 10px;
+  overflow: hidden;
+}
+section {
+  background: #015fb8 url(../img/bg.png);
+  padding-top: 10px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+}
+header .logo {
+  margin-right: 2rem;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li + li {
+  margin-left: 1rem;
+}
+nav ul li a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+i.fas.fa-bars {
+  display: none;
+  font-size: 2.5rem;
+}
+a.btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: auto;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  padding: 0.5rem 2rem;
+}
+.content {
+  padding: 5rem 0 10rem 0;
+  display: flex;
+  align-items: center;
+  margin-left: -2rem;
+}
+.content > div {
+  width: calc(50% - 2rem);
+  margin-left: 2rem;
+}
+.text h1 {
+  text-transform: uppercase;
+  font-size: 8rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+.text p {
+  margin-bottom: 2rem;
+}
+.image-product img {
+  width: 100%;
+}
+@media (max-width: 849px) {
+  html {
+    font-size: 55%;
+  }
+  header .container {
+    justify-content: space-between;
+  }
+  nav ul li:not(:first-child),
+  header .btn {
+    display: none;
+  }
+  header .logo {
+    margin-right: 0;
+  }
+  i.fas.fa-bars {
+    display: block;
+  }
+  .content {
+    padding: 0 2rem 2rem 2rem;
+  }
+  .text h1 {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 549px) {
+  .content {
+    flex-direction: column-reverse;
+    margin-left: 0;
+  }
+  .content > div {
+    width: 100%;
+    margin-left: 0;
+  }
+  .text {
+    text-align: center;
+  }
+  .image-product {
+    padding: 10rem 0;
+  }
+}

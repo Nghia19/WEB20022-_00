@@ -135,6 +135,7 @@ article p {
   margin-left: 3.5rem;
   overflow: hidden;
   font-size: 0;
+  cursor: pointer;
 }
 .gallery-meta {
   text-align: right;
