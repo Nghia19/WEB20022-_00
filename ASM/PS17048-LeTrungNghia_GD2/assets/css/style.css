@@ -1405,7 +1405,7 @@ select.orderby {
   color: var(--secondary-color);
 }
 .owl-nav {
-  opacity: 1;
+  opacity: 0;
   visibility: visible;
   transition: all 0.2s ease 0s;
 }
@@ -1516,7 +1516,6 @@ select.orderby {
 }
 
 .support-nav {
-  display: none;
   position: fixed;
   left: 13px;
   width: auto;
