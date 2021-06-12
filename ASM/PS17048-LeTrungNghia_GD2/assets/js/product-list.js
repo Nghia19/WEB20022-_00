@@ -55,19 +55,19 @@ const PRODUCTLIST = [
   },
   {
     id: 10,
-    title: "Effects Of Time",
+    title: "Pene Salmone",
     price: 50000,
     label: "HOT",
   },
   {
     id: 11,
-    title: "Attribute Variation",
+    title: "Mushroom Burger",
     price: 100000,
     label: "",
   },
   {
     id: 12,
-    title: "Fried Chicken",
+    title: "Bacon Burger",
     price: 80000,
     label: "NEW",
   },
@@ -86,17 +86,17 @@ let showProduct = (products, n) => {
         ${label}
           <a href="./san-pham.html?id=${products[index].id}">
               <img src="./assets/img/product-${products[index].id}-600x600.jpg" alt="${products[index].title}">
+              <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
           </a>
       </div>
       <div class="box-text text-center">
           <p class="product-title"><a href="./san-pham.html?id=${products[index].id}">${products[index].title}</a></p>
-          <div class="star-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-          </div>
           <div class="swatches">
               <div class="swatch">
                 <div data-value="M" class="swatch-element plain m available">

@@ -121,7 +121,7 @@ h6 {
 section {
   padding: 3rem 0;
 }
-section:nth-child(2n) {
+section:nth-child(odd) {
   background-color: rgb(240, 240, 240);
 }
 section#list-products-full {
@@ -596,8 +596,17 @@ ul {
   text-transform: uppercase;
 }
 .box-image > a {
+  position: relative;
   display: block;
-  font-size: 0px;
+}
+.box-image > a .star-rating {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.3rem;
 }
 .box-image {
   position: relative;
@@ -610,6 +619,7 @@ ul {
   background-color: rgb(254, 69, 69);
   color: rgb(255, 255, 255);
   font-size: 1.3rem;
+  font-weight: bold;
   padding: 0.2rem 4rem;
   transform: rotate(45deg);
   top: 15px;
@@ -636,6 +646,9 @@ ul {
     rgba(32, 32, 32, 0.05) 0px 16px 16px, rgba(49, 49, 49, 0.05) 0px 32px 32px,
     rgba(35, 35, 35, 0.05) 0px 64px 64px;
 }
+.box-text .swatches {
+  padding-bottom: 0;
+}
 .product-title {
   margin-bottom: 0px;
 }
@@ -655,6 +668,7 @@ span.price {
   display: block;
   color: red;
   font-weight: 700;
+  font-size: 2rem;
   margin: 0.5rem 0px;
 }
 .add-the-cart a {
@@ -2272,7 +2286,7 @@ a.active:after {
   color: var(--primary-color) !important;
   top: -30%;
   left: 52%;
-  font-size: 9px;
+  font-size: 0.9rem;
   transform: translateX(-50%);
 }
 .add-the-cart a span {
