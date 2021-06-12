@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REM vs PX</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      html {
+        font-size: 62.5%;
+      }
+      @media (max-width: 849px) {
+        html {
+          font-size: 50%;
+        }
+      }
+      .box {
+        color: white;
+        display: flex;
+      }
+      .rem,
+      .px {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .px {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        font-size: 20px;
+        /* font-size: 2em; */
+      }
+      .rem {
+        background-color: blue;
+        font-size: 2rem;
+        width: 20rem;
+        height: 20rem;
+        /* font-size: 2rem; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="px">PX</div>
+        <div class="rem">REM</div>
+      </div>
+    </div>
+  </body>
+</html>

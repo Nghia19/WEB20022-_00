@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body,
+td,
+th {
+  font-family: "Open Sans", sans-serif;
+  color: #000;
+  background-color: #999;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+/*-------------------------------------------STYLE_TAGS---------------------------------------*/
+.text_links {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #000;
+  text-decoration: none;
+}
+h1 {
+  font-size: 4.3rem;
+  margin-top: 0;
+  margin-bottom: 7px;
+  text-align: left;
+  color: #b81414;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2.title_left {
+  background-color: red;
+  padding: 10px;
+  color: #fff;
+}
+p {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+p.pleasure {
+  color: #f00;
+}
+
+.emphasis {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #b81414;
+}
+/*-------------------------------------------DIV_TAGS---------------------------------------*/
+#wrap {
+  width: 100%;
+  max-width: 980px;
+  margin: 0pt auto 0pt auto;
+  overflow: auto;
+  background-color: #fff;
+  padding: 2rem;
+}
+.wrap_content {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+}
+.wrap_left {
+  width: 28rem;
+  margin-right: 2rem;
+}
+
+.box_left {
+  width: 28rem;
+  margin-bottom: 1rem;
+}
