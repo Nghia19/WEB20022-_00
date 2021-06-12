@@ -162,6 +162,9 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, "300");
   });
 });
+window.addEventListener("load", function () {
+  document.querySelector("body").classList.add("loaded");
+});
 
 var url = new URL(window.location.href);
 var id = url.searchParams.get("id");
