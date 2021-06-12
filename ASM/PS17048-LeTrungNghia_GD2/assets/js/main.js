@@ -165,7 +165,7 @@ $(document).ready(function () {
 
 var url = new URL(window.location.href);
 var id = url.searchParams.get("id");
-// let cart = [];
+let cart = [];
 function saveCart() {
   localStorage.setItem("shoppingCart", JSON.stringify(cart));
 }
@@ -174,20 +174,19 @@ function loadCart() {
 }
 if (localStorage.getItem("shoppingCart") != null) {
   loadCart();
-  function getCount() {
-    let count = document.querySelector(".top-bar-nav .fa-shopping-cart");
-    count.setAttribute(
-      "data-count",
-      cart.reduce((counts, count) => counts + count.count, 0)
-    );
-    if (cart.length != 0) {
-      count.classList.add("count");
-    } else {
-      count.classList.remove("count");
-    }
+}
+function getCount() {
+  let count = document.querySelector(".top-bar-nav .fa-shopping-cart");
+  count.setAttribute(
+    "data-count",
+    cart.reduce((counts, count) => counts + count.count, 0)
+  );
+  if (cart.length != 0) {
+    count.classList.add("count");
+  } else {
+    count.classList.remove("count");
   }
 }
-
 setTimeout(getCount);
 function formatCash(str) {
   str = String(str);

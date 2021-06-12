@@ -27,7 +27,6 @@ for (let i = 0; i < addCart.length; i++) {
         if (sizes[i].checked) return [sizes[i].value, i];
       }
     };
-    console.log("🚀 ~ file: add-cart.js ~ line 30 ~ size ~ size", size());
     addItemToCart(
       idProduct,
       name + " - " + size()[0],

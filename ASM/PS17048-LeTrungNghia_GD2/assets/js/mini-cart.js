@@ -33,9 +33,7 @@ function displayMiniCart() {
   document.getElementById("mini-cart").innerHTML = output;
   subTotalMiniCart();
 }
-if (localStorage.getItem("shoppingCart") != null) {
-  displayMiniCart();
-}
+displayMiniCart();
 function subTotalMiniCart() {
   let sum = cart.reduce((sum, item) => sum + item.count * item.price, 0);
   document.querySelector(".total").innerHTML = formatCash(sum);
