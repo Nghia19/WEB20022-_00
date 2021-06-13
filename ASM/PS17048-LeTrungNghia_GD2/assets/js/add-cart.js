@@ -53,7 +53,7 @@ function addItemToCart(id, name, price, count) {
 
 if (id) {
   let index = PRODUCTLIST.findIndex((element) => element.id == id);
-  let cccc = `
+  let output = `
 <h1 class="entry-title product-title">${PRODUCTLIST[index].title}</h1>
 <div class="product-rating">
   <div class="star-rating">
@@ -81,8 +81,8 @@ if (id) {
 </div>
 
 <div class="swatches">
+<div class="header">Size:</div>
   <div class="swatch">
-    <div class="header">KÍCH THƯỚC</div>
     <div data-value="M" class="swatch-element plain m available">
       <input
         id="swatch-${id}-m"
@@ -107,7 +107,7 @@ if (id) {
     </div>
   </div>
 </div>`;
-  document.getElementById("cc").innerHTML = cccc;
+  document.getElementById("cc").innerHTML = output;
 }
 
 let prices = document.getElementsByClassName("price");

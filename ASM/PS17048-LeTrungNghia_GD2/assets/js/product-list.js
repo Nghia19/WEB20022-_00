@@ -3,25 +3,25 @@ const PRODUCTLIST = [
     id: 1,
     title: "Effects Of Time",
     price: 50000,
-    label: "HOT",
+    label: "sale",
   },
   {
     id: 2,
     title: "Attribute Variation",
     price: 100000,
-    label: "",
+    label: "hot",
   },
   {
     id: 3,
     title: "Fried Chicken",
     price: 80000,
-    label: "NEW",
+    label: "new",
   },
   {
     id: 4,
     title: "Printed A-Line",
     price: 85000,
-    label: "NEW",
+    label: "new",
   },
   {
     id: 5,
@@ -33,31 +33,31 @@ const PRODUCTLIST = [
     id: 6,
     title: "Flawless",
     price: 55000,
-    label: "SALE",
+    label: "sale",
   },
   {
     id: 7,
     title: "Floral Print",
     price: 450000,
-    label: "SALE",
+    label: "",
   },
   {
     id: 8,
     title: "Solid Straight",
     price: 115000,
-    label: "HOT",
+    label: "hot",
   },
   {
     id: 9,
     title: "Fettle Mesh",
     price: 65000,
-    label: "",
+    label: "sale",
   },
   {
     id: 10,
     title: "Pene Salmone",
     price: 50000,
-    label: "HOT",
+    label: "hot",
   },
   {
     id: 11,
@@ -69,16 +69,16 @@ const PRODUCTLIST = [
     id: 12,
     title: "Bacon Burger",
     price: 80000,
-    label: "NEW",
+    label: "new",
   },
 ];
 let showProduct = (products, n) => {
-  let ccc = ``;
+  let output = "";
   for (let index = 0; index < n; index++) {
     let label = products[index].label
-      ? `<div class="label-new ">${products[index].label}</div>`
+      ? `<div class="label-new ${products[index].label}">${products[index].label}</div>`
       : "";
-    ccc += `
+    output += `
 <div class="col medium-6 small-12 large-4">
 <div class="col-inner">
   <div class="product has-hover">
@@ -134,7 +134,7 @@ let showProduct = (products, n) => {
 </div>
 </div>`;
   }
-  return ccc;
+  return output;
 };
 let homeProducts = document.querySelector("#list-products .row");
 if (homeProducts) {
