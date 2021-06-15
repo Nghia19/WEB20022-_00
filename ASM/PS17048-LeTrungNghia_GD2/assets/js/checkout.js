@@ -26,7 +26,9 @@ function displayCheckout() {
   }
 }
 displayCheckout();
-
+document
+  .getElementById("current-position")
+  .addEventListener("click", getCurrentPosition);
 function getCurrentPosition() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(setCurrentPosition);
@@ -117,10 +119,12 @@ function calculateAndDisplayRoute() {
   );
 }
 // SMS
+
 function authsmscode() {
+  document.querySelector(".form-control.otp").classList.add("active");
   var code = document.getElementById("vericode").value;
   if (!code) {
-    alert("Thông báo", "Bạn hãy nhập số xác minh từ tin nhắn điện thoại");
+    alert("Thông báo\nBạn hãy nhập số xác minh từ tin nhắn điện thoại");
     return;
   }
   var confirmationResult = window.confirmationResult;
@@ -128,30 +132,30 @@ function authsmscode() {
     .confirm(code)
     .then(function (result) {
       // User signed in successfully.
-      var user = result.user;
+      var phoneNumber = result.user.phoneNumber;
       firebase
         .auth()
         .currentUser.getIdToken(/* forceRefresh */ true)
         .then(function (idToken) {
-          //c'est bon
           // 				placeOrderEx(idToken);
-          alert("Đúng mã!");
+          alert("Số điện thoại " + phoneNumber + " đã được xác minh");
+          document.querySelector(".form-control.otp").style.display = "none";
+          document
+            .querySelector(".form-control.phone")
+            .classList.add("confirm");
         })
         .catch(function (error) {
           // Handle error
+          console.log(error.message);
           alert("Thông báo Lỗi không xác định!");
         });
     })
     .catch(function (error) {
       // User couldn't sign in (bad verification code?)
-      // ...
+      console.log(error.message);
       alert("Thông báo Bạn nhập sai số xác minh từ điện thoại");
     });
 }
-function show4() {
-  document.getElementById("authsmsbtn").addEventListener("click", authsmscode);
-}
-
 function onPhoneSignin(phone) {
   var appVerifier = window.recaptchaVerifier;
   firebase
@@ -160,12 +164,17 @@ function onPhoneSignin(phone) {
     .then(function (confirmationResult) {
       /* SMS sent. Prompt user to type the code from the message */
       window.confirmationResult = confirmationResult;
+      document.querySelector(".form-control.phone").classList.remove("active");
+      document.querySelector(".form-control.phone").classList.add("none");
+      document.querySelector(".form-control.otp").style.display = "block";
     })
     .catch(function (error) {
+      document.querySelector(".form-control.phone").classList.remove("active");
       alert(error.message);
     });
 }
 window.onload = () => {
+  firebase.auth().languageCode = "vi";
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("rcccont", {
     size: "invisible",
     callback: function (response) {
@@ -174,16 +183,14 @@ window.onload = () => {
   });
 };
 function onPhoneAuth() {
-  // show4();
+  document.querySelector(".form-control.phone").classList.add("active");
+  document.getElementById("authsmsbtn").addEventListener("click", authsmscode);
   var phone = document.getElementById("phone").value;
   while (phone.charAt(0) === "0") {
     //remove 0 from begin:
     phone = phone.substr(1);
   }
   phone = "+84" + phone;
-  //window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('rcccont');
-  //onPhoneSignin(phone);
-
   onPhoneSignin(phone);
   recaptchaVerifier.render().then(function (widgetId) {
     window.recaptchaWidgetId = widgetId;

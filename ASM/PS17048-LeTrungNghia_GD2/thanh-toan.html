@@ -165,26 +165,47 @@
               required
             />
           </div>
-          <div class="form-control">
+          <div class="form-control phone">
             <label for="phone">
               Số điện thoại<span class="required">*</span>
             </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              value=""
-              size="30"
-              required
-            />
-            <button
-              type="button"
-              class="btn primary"
-              id="btnsubmit"
-              onclick="onPhoneAuth()"
-            >
-              Tiếp theo
-            </button>
+            <div class="input-group">
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                value=""
+                size="30"
+                required
+              />
+              <button
+                type="button"
+                class="button primary"
+                id="btnsubmit"
+                onclick="onPhoneAuth()"
+              >
+                Nhận OTP
+              </button>
+            </div>
+          </div>
+          <div class="form-control otp" style="display: none">
+            <label for="phone">
+              Vui Lòng Nhập Mã Xác Minh
+              <span class="required">*</span>
+            </label>
+            <div class="input-group">
+              <input
+                id="vericode"
+                name="phone"
+                type="tel"
+                value=""
+                size="30"
+                required
+              />
+              <button type="button" class="button secondary" id="authsmsbtn">
+                Xác minh
+              </button>
+            </div>
           </div>
           <div class="form-control">
             <label for="address">
@@ -197,11 +218,8 @@
               value=""
               required
               autocomplete="off"
-              onclick="getCurrentPosition()"
             />
-            <a class="form-control" onclick="getCurrentPosition()">
-              Set Current Location
-            </a>
+            <p id="current-position">Đặt vị trí hiện tại</p>
             <div id="map" style="height: 350px; width: 100%"></div>
           </div>
           <div class="form-control">
@@ -503,15 +521,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script>
       const firebaseConfig = {
-        apiKey: "AIzaSyAVHaqoyBwWyJhZMCbsA3ng-esG7riQ_ek",
-        authDomain: "my-project-1537032809304.firebaseapp.com",
-        projectId: "my-project-1537032809304",
-        storageBucket: "my-project-1537032809304.appspot.com",
-        messagingSenderId: "81748023478",
-        appId: "1:81748023478:web:5fc2da9c562f961315ee17",
-        measurementId: "G-2Q45ZWY32E",
+        apiKey: "AIzaSyCc2CNzGp-0MXOF7e3_rFB8jkJ0oXXkwfs",
+        authDomain: "myxit-8fa60.firebaseapp.com",
+        projectId: "myxit-8fa60",
+        storageBucket: "myxit-8fa60.appspot.com",
+        messagingSenderId: "48579088544",
+        appId: "1:48579088544:web:9aff3b8437922b310b79c5",
       };
-
+      // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
   </body>
