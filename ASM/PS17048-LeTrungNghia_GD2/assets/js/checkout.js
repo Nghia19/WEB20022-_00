@@ -26,3 +26,166 @@ function displayCheckout() {
   }
 }
 displayCheckout();
+
+function getCurrentPosition() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setCurrentPosition);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+// get formatted address based on current position and set it to input
+function setCurrentPosition(pos) {
+  var geocoder = new google.maps.Geocoder();
+  var latlng = {
+    lat: parseFloat(pos.coords.latitude),
+    lng: parseFloat(pos.coords.longitude),
+  };
+  geocoder.geocode({ location: latlng }, function (responses) {
+    if (responses && responses.length > 0) {
+      document.getElementById("address").value = responses[1].formatted_address;
+      calculateAndDisplayRoute();
+      //    console.log(responses[1].formatted_address);
+    } else {
+      alert("Cannot determine address at this location.");
+    }
+  });
+}
+
+// MAP
+var map, directionsService, directionsDisplay;
+function initMap() {
+  const myLatLng = {
+    lat: 10.9520931,
+    lng: 107.0013796,
+  };
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: myLatLng,
+    zoom: 9,
+  });
+  initAutocomplete();
+  initDirection();
+}
+var checkoutForm = document.getElementById("checkout-form");
+checkoutForm.addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+  }
+});
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+    /** @type {!HTMLInputElement} */
+    (document.getElementById("address")),
+    {
+      types: ["geocode"],
+    }
+  );
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete.addListener("place_changed", calculateAndDisplayRoute);
+}
+function initDirection() {
+  directionsService = new google.maps.DirectionsService();
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+}
+
+function calculateAndDisplayRoute() {
+  // document.querySelector(".loader-wrap").style.display = "block";
+  directionsService.route(
+    {
+      origin:
+        "Nhà văn hóa huyện Trảng Bom, Đường 29/04, Trảng Bom, Đồng Nai, Việt Nam",
+      destination: document.getElementById("address").value,
+      travelMode: "DRIVING",
+    },
+    function (response, status) {
+      // document.querySelector(".loader-wrap").style.display = "none";
+      if (status === "OK") {
+        directionsDisplay.setDirections(response);
+        let distance = response.routes[0].legs[0].distance.text;
+        let duration = response.routes[0].legs[0].duration.text;
+        console.log(distance + " - " + duration);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
+// SMS
+function authsmscode() {
+  var code = document.getElementById("vericode").value;
+  if (!code) {
+    alert("Thông báo", "Bạn hãy nhập số xác minh từ tin nhắn điện thoại");
+    return;
+  }
+  var confirmationResult = window.confirmationResult;
+  confirmationResult
+    .confirm(code)
+    .then(function (result) {
+      // User signed in successfully.
+      var user = result.user;
+      firebase
+        .auth()
+        .currentUser.getIdToken(/* forceRefresh */ true)
+        .then(function (idToken) {
+          //c'est bon
+          // 				placeOrderEx(idToken);
+          alert("Đúng mã!");
+        })
+        .catch(function (error) {
+          // Handle error
+          alert("Thông báo Lỗi không xác định!");
+        });
+    })
+    .catch(function (error) {
+      // User couldn't sign in (bad verification code?)
+      // ...
+      alert("Thông báo Bạn nhập sai số xác minh từ điện thoại");
+    });
+}
+function show4() {
+  document.getElementById("authsmsbtn").addEventListener("click", authsmscode);
+}
+
+function onPhoneSignin(phone) {
+  var appVerifier = window.recaptchaVerifier;
+  firebase
+    .auth()
+    .signInWithPhoneNumber(phone, appVerifier)
+    .then(function (confirmationResult) {
+      /* SMS sent. Prompt user to type the code from the message */
+      window.confirmationResult = confirmationResult;
+    })
+    .catch(function (error) {
+      alert(error.message);
+    });
+}
+window.onload = () => {
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("rcccont", {
+    size: "invisible",
+    callback: function (response) {
+      // reCAPTCHA solved, allow signInWithPhoneNumber.
+    },
+  });
+};
+function onPhoneAuth() {
+  // show4();
+  var phone = document.getElementById("phone").value;
+  while (phone.charAt(0) === "0") {
+    //remove 0 from begin:
+    phone = phone.substr(1);
+  }
+  phone = "+84" + phone;
+  //window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('rcccont');
+  //onPhoneSignin(phone);
+
+  onPhoneSignin(phone);
+  recaptchaVerifier.render().then(function (widgetId) {
+    window.recaptchaWidgetId = widgetId;
+  });
+}
