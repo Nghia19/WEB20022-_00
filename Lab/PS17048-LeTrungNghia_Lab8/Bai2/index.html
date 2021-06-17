@@ -3,39 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;" />
     <title>Bài 2</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
-    <header>
-      <div class="logo container">
+    <header class="container">
+      <div class="logo">
         <img src="./img/logo.png" alt="" />
       </div>
-      <div class="container">
-        <div class="menu">
-          <nav>
-            <ul>
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Tin thành phố</a></li>
-              <li><a href="#">Chính sách</a></li>
-              <li><a href="#">Giới thiệu</a></li>
-              <li><a href="#">Liên hệ</a></li>
-            </ul>
-          </nav>
-          <div class="search">
-            <form class="search-form">
-              <input class="form-control" type="text" value="Tìm kiếm" />
-              <button class="btn buttom-search" type="submit">Tìm kiếm</button>
-            </form>
-          </div>
+      <div class="menu">
+        <nav>
+          <img src="./img/logo.png" alt="" style="display: none" />
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Tin thành phố</a></li>
+            <li><a href="#">Chính sách</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <a class="menu-toggle">
+          <i class="fa fa-bars"></i>
+          MENU
+        </a>
+        <div class="search">
+          <form class="search-form">
+            <input class="form-control" type="text" placeholder="Tìm kiếm" />
+            <button class="btn buttom-search" type="submit">Tìm kiếm</button>
+          </form>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
         <div class="main">
-          <aside>
+          <aside class="left">
             <div class="widget">
               <h3>Thông tin <span>truy cập</span></h3>
               <ul class="categories">
@@ -55,17 +62,94 @@
             </div>
           </aside>
           <div class="content">
-            <img src="https://source.unsplash.com/random/800x300?sig=2" />
+            <img src="https://source.unsplash.com/random/1000x400?sig=2" />
             <h3>Thông tin</h3>
+            <article>
+              <h2><a href="">Aston Martin tung phiên bản thêu hình rồng</a></h2>
+              <div class="box">
+                <div class="box-image">
+                  <a href="">
+                    <img
+                      src="https://source.unsplash.com/random/500x500?bmw&sig=1"
+                    />
+                  </a>
+                </div>
+                <div class="box-text">
+                  <p>
+                    Sau Rolls-Royce, một hãng xe khác đến từ Anh cũng dành một
+                    phiên bản đặc biệt cho thị trường Trung Quốc nhân năm con
+                    rồng 2012.
+                  </p>
+                  <p>
+                    Sau Rolls-Royce, một hãng xe khác đến từ Anh cũng dành một
+                    phiên bản đặc biệt cho thị trường Trung Quốc nhân năm con
+                    rồng 2012.
+                  </p>
+                </div>
+              </div>
+              <ul>
+                <li>
+                  <a href="">Tại sao lại nhường đường cho xe bên phải?</a>
+                </li>
+                <li>
+                  <a href="">5 loại tiếng ồn trên xe hơi không thể bỏ qua</a>
+                </li>
+                <li>
+                  <a href="">Volkswagen Tiguan 2012 có mặt tại Việt Nam</a>
+                </li>
+              </ul>
+            </article>
           </div>
-          <aside>
+          <aside class="right">
             <div class="widget">
-              <h3>Thông tin <span>truy cập</span></h3>
+              <h3>Thông tin <span>tiêu điểm</span></h3>
+              <ul class="categories">
+                <li>
+                  <a href="#">Trưa 14/6, thêm 100 ca mắc COVID-19 trong nước</a>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illum sint doloremque rem eaque quis aut velit,
+                    reprehenderit quod, culpa beatae, nihil dolor vel eos
+                    maiores id. Ullam deleniti et nesciunt!
+                  </p>
+                </li>
+                <li>
+                  <a href="#"
+                    >Xem trực tuyến tình hình dịch COVID-19 tại TP.HCM bằng bản
+                    đồ</a
+                  >
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illum sint doloremque rem eaque quis aut velit,
+                    reprehenderit quod, culpa beatae, nihil dolor vel eos
+                    maiores id. Ullam deleniti et nesciunt!
+                  </p>
+                </li>
+                <li>
+                  <a href="#"
+                    >TP.HCM: Tháo dỡ phong tỏa con hẻm liên quan nhóm truyền
+                    giáo Phục Hưng</a
+                  >
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Illum sint doloremque rem eaque quis aut velit,
+                    reprehenderit quod, culpa beatae, nihil dolor vel eos
+                    maiores id. Ullam deleniti et nesciunt!
+                  </p>
+                </li>
+              </ul>
             </div>
           </aside>
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer class="container text-center">
+      <p>
+        Copyright © 2021 .All rights reserved by <span>WEB20022</span>. Designed
+        by <span>Nghia.lt</span>
+      </p>
+    </footer>
+    <div class="side-overlay"></div>
+    <script src="./js/main.js"></script>
   </body>
 </html>

@@ -784,14 +784,27 @@ span.price {
 #our-team .has-hover:hover .person-social li {
   transform: translateY(0);
 }
+#our-team .person-social li:nth-child(1):hover a {
+  background-color: #3b5998;
+}
 #our-team .person-social li:nth-child(2) {
   transition-delay: 0.15s;
 }
+#our-team .person-social li:nth-child(2):hover a {
+  background-color: #55acee;
+}
+
 #our-team .person-social li:nth-child(3) {
   transition-delay: 0.3s;
 }
+#our-team .person-social li:nth-child(3):hover a {
+  background-color: #cb2027;
+}
 #our-team .person-social li:nth-child(4) {
   transition-delay: 0.45s;
+}
+#our-team .person-social li:nth-child(4):hover a {
+  background-color: #b8009b;
 }
 #our-team .person-social li a {
   display: block;
@@ -1935,7 +1948,7 @@ table span.price {
 .form-control.otp {
   position: relative;
 }
-.form-control.phone.none {
+.none {
   display: none;
 }
 .form-control.phone.active::before,
@@ -1961,6 +1974,21 @@ table span.price {
   color: var(--primary-color);
   cursor: pointer;
   font-weight: 600;
+}
+.map-wrapper {
+  position: relative;
+}
+.shippingtime_box {
+  position: absolute;
+  left: 2px;
+  bottom: 3px;
+  background: #fff;
+  padding: 3px 7px;
+  border: 2px dashed #dd3333;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-size: 14px;
 }
 /* fdada */
 .slider-nav {

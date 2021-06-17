@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: rgb(108, 108, 108);
+  background-color: #ccc;
+}
+/*-----------------------------------------------------DIV_TAGS----------------------------------------------*/
+#wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0pt auto 0pt auto;
+  background-color: #fff;
+  padding: 10px;
+}
+h1 {
+  text-align: center;
+}
+#content {
+  display: flex;
+}
+aside {
+  width: 100%;
+  max-width: 300px;
+  padding: 0 1rem;
+}
+.box {
+  margin-bottom: 1rem;
+}
+.box.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+.box_content {
+  margin: 0 1rem;
+  padding: 0 1rem;
+  flex: 1;
+}
+.box_content p {
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+.box_footer {
+  border-top: #ccc solid 1px;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+.line_title,
+.line_title_long {
+  padding: 5px 0px 5px 5px;
+  background-color: #ccc;
+  color: #900;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+img {
+  max-width: 100%;
+}
+.menu_links ul {
+  list-style: none;
+  margin: 0px;
+}
+.menu_links ul li {
+  padding: 5px;
+  list-style: none;
+}
+.menu_links ul li + li {
+  border-top: #ccc 1px dotted;
+}
+.menu_links ul li img {
+  width: 7px;
+  height: 7px;
+  vertical-align: middle;
+}
+.menu_links ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.menu_links ul li a:hover {
+  color: #cc0000;
+}
+/*-----------------------------------------------------STYLE_TAGS----------------------------------------------*/
+.text_bold {
+  font-weight: bold;
+  color: #900;
+  text-decoration: none;
+}
+.text_cent {
+  text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 55%;
+  }
+  #content {
+    flex-wrap: wrap;
+  }
+  aside.right {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 849px) {
+  .box_content {
+    margin: 0;
+  }
+  .box_content {
+    order: 0;
+  }
+  aside.left {
+    max-width: 100%;
+    order: 1;
+  }
+  aside.right {
+    order: 2;
+  }
+}

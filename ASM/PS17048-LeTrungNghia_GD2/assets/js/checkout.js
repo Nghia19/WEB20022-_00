@@ -111,7 +111,9 @@ function calculateAndDisplayRoute() {
         directionsDisplay.setDirections(response);
         let distance = response.routes[0].legs[0].distance.text;
         let duration = response.routes[0].legs[0].duration.text;
-        console.log(distance + " - " + duration);
+        document.querySelector(".shippingtime_box").style.display = "block";
+        document.querySelector(".distance").innerText = distance;
+        document.querySelector(".duration").innerText = duration;
       } else {
         window.alert("Directions request failed due to " + status);
       }
@@ -138,11 +140,12 @@ function authsmscode() {
         .currentUser.getIdToken(/* forceRefresh */ true)
         .then(function (idToken) {
           // 				placeOrderEx(idToken);
-          alert("Số điện thoại " + phoneNumber + " đã được xác minh");
-          document.querySelector(".form-control.otp").style.display = "none";
+          // alert("Số điện thoại " + phoneNumber + " đã được xác minh");
+          document.querySelector(".form-control.otp").classList.add("none");
           document
             .querySelector(".form-control.phone")
             .classList.add("confirm");
+          document.getElementById("btnsubmit").innerText = "Đã xác minh";
         })
         .catch(function (error) {
           // Handle error
@@ -166,7 +169,7 @@ function onPhoneSignin(phone) {
       window.confirmationResult = confirmationResult;
       document.querySelector(".form-control.phone").classList.remove("active");
       document.querySelector(".form-control.phone").classList.add("none");
-      document.querySelector(".form-control.otp").style.display = "block";
+      document.querySelector(".form-control.otp").classList.remove("none");
     })
     .catch(function (error) {
       document.querySelector(".form-control.phone").classList.remove("active");

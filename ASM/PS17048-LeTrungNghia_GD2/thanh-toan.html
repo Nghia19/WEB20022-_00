@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Tin tức | Foodo | Đặt Món & Giao ship tận nơi | 30 phút giao hàng | Đảm
+      Thanh toán | Foodo | Đặt Món & Giao ship tận nơi | 30 phút giao hàng | Đảm
       bảo chất lượng
     </title>
     <meta
       name="title"
-      content="Tin tức | Foodo | Đặt Món & Giao ship tận nơi | 30 phút giao hàng | Đảm bảo chất lượng"
+      content="Thanh toán | Foodo | Đặt Món & Giao ship tận nơi | 30 phút giao hàng | Đảm bảo chất lượng"
     />
     <meta
       name="description"
@@ -188,7 +188,7 @@
               </button>
             </div>
           </div>
-          <div class="form-control otp" style="display: none">
+          <div class="form-control otp none">
             <label for="phone">
               Vui Lòng Nhập Mã Xác Minh
               <span class="required">*</span>
@@ -220,7 +220,18 @@
               autocomplete="off"
             />
             <p id="current-position">Đặt vị trí hiện tại</p>
-            <div id="map" style="height: 350px; width: 100%"></div>
+            <div class="map-wrapper">
+              <div id="map" style="height: 350px; width: 100%"></div>
+              <div class="shippingtime_box" style="display: none">
+                Khoảng cách:
+                <span class="distance" style="font-weight: 700"></span><br />
+                Thời gian giao hàng:
+                <span
+                  class="duration"
+                  style="white-space: nowrap; font-weight: 700"
+                ></span>
+              </div>
+            </div>
           </div>
           <div class="form-control">
             <label for="order-comments">
