@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .text {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: black;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 250px;
+        z-index: 1;
+      }
+      .box {
+        display: flex;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .box-r {
+        justify-content: flex-end;
+      }
+      @media (max-width: 768px) {
+        img {
+          width: 100%;
+        }
+        .text {
+          left: 0;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .box {
+          flex-direction: column;
+        }
+        .box-text {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img
+        src="https://images.unsplash.com/photo-1621570169561-0c2a2e193ee1?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      />
+      <h1 class="text">
+        loose leaf tea at a higher quality than your're used to
+      </h1>
+    </div>
+
+    <div class="box box-r">
+      <img
+        src="https://images.unsplash.com/photo-1606787619248-f301830a5a57?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      />
+      <h1 class="text">Lorem ipsum dolor sit amet sit amet sit amet</h1>
+    </div>
+  </body>
+</html>

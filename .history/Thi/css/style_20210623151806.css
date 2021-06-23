@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.1%;
+  line-height: 1.6;
+  box-sizing: border-box;
+  background-attachment: fixed;
+}
+body {
+  margin: 0px;
+  font-size: 9px;
+  color: rgb(108, 108, 108);
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0px auto;
+  padding: 0px 10px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}

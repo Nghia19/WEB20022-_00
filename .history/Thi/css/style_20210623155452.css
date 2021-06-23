@@ -1,0 +1,12 @@
+.text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1px;
+  color: black;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: -50%;
+}
+.box {
+  position: relative;
+}
