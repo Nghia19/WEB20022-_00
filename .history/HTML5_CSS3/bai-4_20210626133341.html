@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 4</title>
+  </head>
+
+  <body>
+    <canvas
+      id="arcexmaple"
+      width="800"
+      height="110"
+      style="
+        display: block;
+        margin: 200px auto;
+        background: whitesmoke;
+        border-color: aqua;
+        border: 1px solid #000;
+      "
+    >
+    </canvas>
+    <script>
+      var canvas = document.getElementById("arcexmaple");
+      var ctx = canvas.getContext("2d");
+      ctx.font = "42px serif";
+      ctx.fillStyle = "blue";
+      ctx.fillText("LÊ TRUNG NGHĨA", 250, 100);
+      ctx.beginPath();
+      ctx.arc(100, 55, 50, 0, 2 * Math.PI);
+      ctx.stroke();
+    </script>
+  </body>
+</html>
